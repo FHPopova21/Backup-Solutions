@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import ContactPopup from "@/components/ContactPopUp";
+import QuoteRequestModal from "@/components/QuoteRequestModal";
 import AboutSlideshow from "@/components/AboutSlideshow";
 
 export const metadata: Metadata = {
@@ -90,7 +91,16 @@ export default function AboutPage() {
                         </h2>
                     </div>
 
-                    <ContactPopup label="Свържете се с нас" />
+                    <div className="flex flex-wrap items-center gap-4">
+                        <QuoteRequestModal
+                            label="Поискай оферта"
+                            className="rounded-lg bg-brand-primary px-6 py-3 font-semibold text-white shadow hover:bg-blue-700 transition-colors focus-visible:outline-2 focus-visible:outline-brand-accent"
+                        />
+                        <ContactPopup
+                            label="Директен контакт"
+                            className="rounded-lg border border-slate-700 px-6 py-3 font-semibold text-white hover:border-slate-500 hover:bg-slate-800 transition-colors focus-visible:outline-2 focus-visible:outline-brand-accent"
+                        />
+                    </div>
                 </div>
             </section>
         </main>

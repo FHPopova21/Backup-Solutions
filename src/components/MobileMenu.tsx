@@ -1,9 +1,8 @@
-
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
-import ContactPopup from "./ContactPopUp";
+import QuoteRequestModal from "./QuoteRequestModal";
 
 type NavItem = {
     label: string;
@@ -14,6 +13,7 @@ type ServiceItem = {
     id: string;
     title: string;
     description: string;
+    icon?: React.ReactNode;
 };
 
 type MobileMenuProps = {
@@ -94,15 +94,27 @@ export default function MobileMenu({
                                             </span>
                                         </summary>
 
-                                        <ul className="space-y-1 pb-2 pl-4">
+                                        <ul className="space-y-1.5 pb-2 pl-2 pt-1">
                                             {dropdownServices.map((service) => (
                                                 <li key={service.id}>
                                                     <Link
                                                         href={`/services/${service.id}`}
                                                         onClick={closeMenu}
-                                                        className="block rounded-lg px-3 py-3 text-sm text-brand-text hover:bg-slate-50 hover:text-brand-primary"
+                                                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-brand-text hover:bg-slate-50 hover:text-brand-primary transition-colors"
                                                     >
-                                                        {service.title}
+                                                        {service.icon && (
+                                                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-blue-50 text-brand-primary">
+                                                                {service.icon}
+                                                            </div>
+                                                        )}
+                                                        <div>
+                                                            <span className="block font-medium text-slate-900">
+                                                                {service.title}
+                                                            </span>
+                                                            <span className="block text-xs text-slate-500 line-clamp-1">
+                                                                {service.description}
+                                                            </span>
+                                                        </div>
                                                     </Link>
                                                 </li>
                                             ))}
@@ -122,8 +134,9 @@ export default function MobileMenu({
                     </ul>
 
                     <div className="mt-6 border-t border-slate-100 pt-6">
-                        <ContactPopup
-                            className="w-full rounded-lg bg-brand-primary px-5 py-3 font-medium text-white"
+                        <QuoteRequestModal
+                            label="Поискай оферта"
+                            className="w-full block text-center rounded-lg bg-brand-primary px-5 py-3 font-semibold text-white shadow hover:bg-blue-700 transition-colors"
                         />
                     </div>
                 </div>

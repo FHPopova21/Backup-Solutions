@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ServiceFAQ, { type FAQItem } from "./FAQ";
-import ContactPopup from "./ContactPopUp";
+import QuoteRequestModal from "./QuoteRequestModal";
 import ServiceApplications, {
     type ApplicationItem,
 } from "./ServiceApplications";
@@ -15,6 +15,7 @@ type ServicePageProps = {
     title: string;
     description: string;
     overview: string;
+    serviceId?: string;
     image?: string;
     features?: ServiceFeature[];
     overviewDetails?: string[];
@@ -32,6 +33,7 @@ export default function ServicePageLayout({
     title,
     description,
     overview,
+    serviceId,
     image,
     features,
     overviewDetails,
@@ -76,7 +78,11 @@ export default function ServicePageLayout({
                     </p>
 
                     <div className="mt-8">
-                        <ContactPopup />
+                        <QuoteRequestModal
+                            label="Поискай оферта"
+                            defaultService={serviceId}
+                            className="rounded-lg bg-brand-primary px-6 py-3 font-semibold text-white shadow hover:bg-blue-700 transition-colors focus-visible:outline-2 focus-visible:outline-brand-accent"
+                        />
                     </div>
                 </div>
             </section>

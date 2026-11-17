@@ -5,6 +5,7 @@ import EquipmentShowcase from "@/components/EquipmentShowcase";
 export default function EquipmentPage() {
     return (
         <ServicePageLayout
+            serviceId="equipment"
             title="Комуникационно оборудване"
             description="Доставка и монтаж на комуникационно оборудване."
             overview="Backup Solutions осигурява подбор, доставка и инсталиране на комуникационни устройства според натоварването и техническите изисквания на обекта."

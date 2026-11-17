@@ -5,6 +5,7 @@ import MaintenanceProcess from "@/components/MaintenanceProcess";
 export default function MaintenancePage() {
     return (
         <ServicePageLayout
+            serviceId="maintenance"
             title="Абонаментно обслужване"
             description="Техническа поддръжка на инсталираните системи."
             overview="Backup Solutions предлага абонаментно обслужване и техническа грижа за видеонаблюдение и мрежи за поддържане на системите в надеждно работно състояние."

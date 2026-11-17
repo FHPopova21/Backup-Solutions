@@ -4,6 +4,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export default function NetworkingPage() {
     return (
         <ServicePageLayout
+            serviceId="networking"
             title="Изграждане на локални мрежи"
             description="Надеждна мрежова инфраструктура за вашия бизнес."
             overview="Backup Solutions предлага изграждане на локални компютърни мрежи за стабилна свързаност, съобразени с работните процеси на вашия обект."

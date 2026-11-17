@@ -4,6 +4,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export default function VideoSurveillancePage() {
     return (
         <ServicePageLayout
+            serviceId="video-surveillance"
             title="Системи за видеонаблюдение"
             description="Доставка и монтаж на системи за видеонаблюдение за дома и бизнеса."
             overview="Backup Solutions предлага доставка и монтаж на системи за видеонаблюдение, съобразени с разположението на обекта и зоните, изискващи визуален контрол."
